@@ -78,7 +78,7 @@
   <record id="ir_module_import_line_base_view_tree" model="ir.ui.view">
     <field name="model">ir.module.import.line</field>
     <field name="arch" type="xml">
-      <list
+      <tree
         decoration-danger="state == 'error'"
         decoration-muted="state == 'done'"
         decoration-info="import_module_state == 'installed'"
@@ -142,7 +142,7 @@
         <field name="migrate_module" readonly="state == 'done'" optional="hide" />
         <field name="install_module" readonly="state == 'done'" optional="hide" />
         <field name="priority" readonly="state == 'done'" optional="hide" />
-      </list>
+      </tree>
     </field>
   </record>
 
@@ -162,7 +162,7 @@
     <field name="name">Compare Module by Lines</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">ir.module.import.line</field>
-    <field name="view_mode">list,form</field>
+    <field name="view_mode">tree,form</field>
     <field name="view_id" ref="ir_module_import_line_view_tree" />
   </record>
 
